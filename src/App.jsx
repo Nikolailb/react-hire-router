@@ -24,7 +24,7 @@ export default function App() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=50&seed=" + someSeed)
+    fetch(`https://randomuser.me/api/?results=50&seed=${someSeed}&inc=name`)
       .then((result) => {
         if (!result.ok) throw Error("Failed to fetch people!");
         return result.json();

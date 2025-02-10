@@ -34,7 +34,9 @@ function HireForm(props) {
           onChange={(e) => setWage(e.target.value)}
           value={wage}
         />
-        <button type="submit">Hire</button>
+        <button type="submit">
+          {person.hired.isHired ? "New wage" : "Hire"}
+        </button>
       </form>
       {person.hired.isHired && (
         <button onClick={handleFire}>Fire person</button>
