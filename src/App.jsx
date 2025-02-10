@@ -6,6 +6,20 @@ import PersonProfile from "./pages/PersonProfile";
 
 const someSeed = "123456789";
 
+// Interface of expected minimal person object
+// eslint-disable-next-line no-unused-vars
+const IPerson = {
+  name: {
+    first: "String",
+    last: "String",
+  },
+  id: 0,
+  hired: {
+    isHired: false,
+    wage: 0,
+  },
+};
+
 export default function App() {
   const [people, setPeople] = useState([]);
 

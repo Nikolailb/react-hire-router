@@ -11,7 +11,7 @@ function PeopleListItem(props) {
           {person.name.first} {person.name.last}
         </Link>
       </h3>
-      {person.wage && <p>Wage: £{person.wage}</p>}
+      {person.hired.isHired && <p>Wage: £{person.hired.wage}</p>}
     </li>
   );
 }
