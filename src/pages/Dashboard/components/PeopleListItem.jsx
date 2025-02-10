@@ -15,7 +15,6 @@ function PeopleListItem(props) {
     </li>
   );
 }
-
 PeopleListItem.propTypes = {
   person: PropTypes.object.isRequired,
 };

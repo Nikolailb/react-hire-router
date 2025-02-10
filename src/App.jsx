@@ -4,7 +4,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import PersonProfile from "./pages/PersonProfile";
 
-const someSeed = "123456789";
+const someSeed = "123456789"; // For reproducable results. Change for different people. Also prevents strict mode from causing annoyances with strictmode.
 
 // Interface of expected minimal person object
 // eslint-disable-next-line no-unused-vars
@@ -24,7 +24,9 @@ export default function App() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch(`https://randomuser.me/api/?results=50&seed=${someSeed}&inc=name`)
+    fetch(
+      `https://randomuser.me/api/?results=50&seed=${someSeed}&inc=name&noinfo`
+    )
       .then((result) => {
         if (!result.ok) throw Error("Failed to fetch people!");
         return result.json();
@@ -37,7 +39,6 @@ export default function App() {
             isHired: false,
             wage: 0,
           };
-          // person.id = id;
           id += 1;
         }
         setPeople(data.results);

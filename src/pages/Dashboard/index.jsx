@@ -20,7 +20,6 @@ function Dashboard(props) {
     </main>
   );
 }
-
 Dashboard.propTypes = {
   people: PropTypes.array.isRequired,
 };
